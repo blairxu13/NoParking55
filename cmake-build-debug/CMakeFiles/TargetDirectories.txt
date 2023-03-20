@@ -1,0 +1,3 @@
+C:/Users/UFSpring2023/CLionProjects/NoParking/cmake-build-debug/CMakeFiles/NoParking.dir
+C:/Users/UFSpring2023/CLionProjects/NoParking/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/UFSpring2023/CLionProjects/NoParking/cmake-build-debug/CMakeFiles/rebuild_cache.dir
