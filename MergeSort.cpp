@@ -12,9 +12,9 @@ using namespace std;
 
 class Merge{
 public:
-	void mergesort(vector<string> plates, int left, int right);
+	void mergesort(License plates, int left, int right);
 private:
-	void merge(vector<string> plates, int left, int mid, int right);
+	void merge(License plates, int left, int mid, int right);
 };
 
 //class slides
@@ -30,7 +30,7 @@ void Merge::mergesort(License plates, int left, int right) {
 }
 
 //class slides
-void Merge::merge(vector<string> plates, int left, int mid, int right) {
+void Merge::merge(License plates, int left, int mid, int right) {
 	int n1 = mid - left + 1;
 	int n2 = right - mid;
 	vector<string> low;
