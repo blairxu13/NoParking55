@@ -18,7 +18,7 @@ private:
 };
 
 //class slides
-void Merge::mergesort(vector<string> plates, int left, int right) {
+void Merge::mergesort(License plates, int left, int right) {
 	if (left < right) {
 		int mid = left + (right - left) / 2;
 		mergesort(plates, left, mid);
