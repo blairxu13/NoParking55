@@ -1,12 +1,12 @@
-#include "DatabaseUtil.h"
+#include "Database.h"
 
-DatabaseUtil::DatabaseUtil() {
+Database::Database() {
 
 }
 
-void DatabaseUtil::readFromCsv(const std::string &filename) {
+void Database::readFromCsv(const std::string &filename) {
     if (!std::filesystem::exists(filename)) {
-        throw std::ios_base::failure("In DatabaseUtil::readFromCsv(), file \"" + filename + "\" not found.");
+        throw std::ios_base::failure("In Database::readFromCsv(), file \"" + filename + "\" not found.");
     }
 
     std::ifstream inputFileStream(filename, std::ios_base::in);
@@ -46,7 +46,7 @@ void DatabaseUtil::readFromCsv(const std::string &filename) {
 
         // Error handling, to avoid surprises.
         if (inputLineVector.size() != 13) {
-            throw std::logic_error("In DatabaseUtil::readFromCsv(), expected 13 elements in inputLineVector(), got " +
+            throw std::logic_error("In Database::readFromCsv(), expected 13 elements in inputLineVector(), got " +
                 std::to_string(inputLineVector.size()));
         }
 

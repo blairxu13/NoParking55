@@ -1,5 +1,5 @@
-#ifndef NOPARKING_DATABASEUTIL_H
-#define NOPARKING_DATABASEUTIL_H
+#ifndef NOPARKING_DATABASE_H
+#define NOPARKING_DATABASE_H
 
 #include <filesystem>
 #include <iostream>
@@ -9,13 +9,13 @@
 #include <vector>
 #include "Citation.h"
 
-class DatabaseUtil {
+class Database {
 public:
     std::vector<std::unique_ptr<Citation>> data;  // The database of parking citations
     /**
      * Creates an interface to a ParkingCitation database.
      */
-    DatabaseUtil();
+    Database();
 
     /**
      * Reads data in from ma CSV file. Not exception-safe.
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //NOPARKING_DATABASEUTIL_H
+#endif //NOPARKING_DATABASE_H
