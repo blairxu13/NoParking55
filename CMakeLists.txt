@@ -3,4 +3,4 @@ project(NoParking)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(NoParking main.cpp MergeSort.cpp MergeSort.h BucketSort.cpp BucketSort.h DatabaseUtil.cpp DatabaseUtil.h)
+add_executable(NoParking main.cpp MergeSort.cpp MergeSort.h BucketSort.cpp BucketSort.h DatabaseUtil.cpp DatabaseUtil.h Citation.cpp Citation.h DateTime.cpp DateTime.h)

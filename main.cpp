@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() {
-    vector<License> totaldata;
+    //vector<License> totaldata;
 	vector<string> plates;
 	string search;
 
