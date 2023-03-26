@@ -10,7 +10,7 @@
 using namespace std;
 
 
-
+/*
 class MergeSort{
 public:
 	void mergesort(License plates, int left, int right);
@@ -70,3 +70,4 @@ void Merge::merge(License plates, int left, int mid, int right) {
 	}
 
 }
+*/
