@@ -11,7 +11,7 @@ using namespace std;
 
 
 
-class Merge{
+class MergeSort{
 public:
 	void mergesort(License plates, int left, int right);
 private:
