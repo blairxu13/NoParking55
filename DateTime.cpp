@@ -18,11 +18,30 @@ DateTime::DateTime(unsigned int year, unsigned short month, unsigned short day, 
     this->minute = minute;
 }
 
+bool DateTime::operator<(DateTime &other) {
+    return this->getDateTimeString() < other.getDateTimeString();
+}
+bool DateTime::operator>(DateTime &other) {
+    return this->getDateTimeString() > other.getDateTimeString();
+}
+bool DateTime::operator==(DateTime &other) {
+    return this->getDateTimeString() == other.getDateTimeString();
+}
+bool DateTime::operator!=(DateTime &other) {
+    return this->getDateTimeString() != other.getDateTimeString();
+}
+bool DateTime::operator<=(DateTime &other) {
+    return this->getDateTimeString() <= other.getDateTimeString();
+}
+bool DateTime::operator>=(DateTime &other) {
+    return this->getDateTimeString() >= other.getDateTimeString();
+}
+
 // Function to convert this into a string
 DateTime::operator std::string() const {
     return std::to_string(year) + "/" + toZeroPaddedString(month, 2) + "/" +
-        toZeroPaddedString(day, 2) + " " + toZeroPaddedString(hour, 2) + ":" +
-        toZeroPaddedString(minute, 2);
+           toZeroPaddedString(day, 2) + " " + toZeroPaddedString(hour, 2) + ":" +
+           toZeroPaddedString(minute, 2);
 }
 
 std::string DateTime::getDateString() {

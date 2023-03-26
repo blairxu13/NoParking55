@@ -32,7 +32,15 @@ public:
      */
     DateTime(unsigned int year, unsigned short month, unsigned short day, unsigned short hour, unsigned short minute);
 
-    operator std::string() const;  // Allow conversion into a string
+    // Overloaded comparisons
+    bool operator<(DateTime &other);
+    bool operator>(DateTime &other);
+    bool operator==(DateTime &other);
+    bool operator!=(DateTime &other);
+    bool operator<=(DateTime &other);
+    bool operator>=(DateTime &other);
+
+    explicit operator std::string() const;  // Allow conversion into a string
     /**
      * Gets the date as a string. Format is YYYYMMDD
      * @return Date as a string
