@@ -33,8 +33,8 @@ void Merge::mergesort(License plates, int left, int right) {
 void Merge::merge(License plates, int left, int mid, int right) {
 	int n1 = mid - left + 1;
 	int n2 = right - mid;
-	License low;
-	License high;
+	vector<License> low;
+	vector<License> high;
 
 	for (int i = 0; i < n1; i++)
 		low.at(i) = plates.at(left + i);
