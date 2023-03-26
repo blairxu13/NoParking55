@@ -2,9 +2,9 @@
 #include <vector>
 #include <fstream>
 #include <string>
-#include <"license.h">
-#include <"mergesort.h">
-#include <"bucketsort.h">
+#include "license.h"
+#include "mergesort.h"
+#include "bucketsort.h"
 using namespace std;
 
 int main() {
