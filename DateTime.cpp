@@ -1,5 +1,14 @@
 #include "DateTime.h"
 
+std::string DateTime::toZeroPaddedString(unsigned int value, unsigned int targetLength) {
+    std::string outputString = std::to_string(value);
+    if (outputString.size() < targetLength) {
+        std::string appendString(targetLength - outputString.size(), '0');
+        outputString = appendString + outputString;
+    }
+    return outputString;
+}
+
 DateTime::DateTime(unsigned int year, unsigned short month, unsigned short day, unsigned short hour,
                    unsigned short minute) {
     this->year = year;
@@ -9,6 +18,20 @@ DateTime::DateTime(unsigned int year, unsigned short month, unsigned short day, 
     this->minute = minute;
 }
 
+// Function to convert this into a string
+DateTime::operator std::string() const {
+    return std::to_string(year) + "/" + toZeroPaddedString(month, 2) + "/" +
+        toZeroPaddedString(day, 2) + " " + toZeroPaddedString(hour, 2) + ":" +
+        toZeroPaddedString(minute, 2);
+}
+
 std::string DateTime::getDateString() {
-    return std::to_string(year) + std::to_string(month) + std::to_string(day);
+    return std::to_string(year) + toZeroPaddedString(month, 2) +
+        toZeroPaddedString(day, 2);
+}
+
+std::string DateTime::getDateTimeString() {
+    return std::to_string(year) + toZeroPaddedString(month, 2) +
+           toZeroPaddedString(day, 2) + toZeroPaddedString(hour, 2) +
+           toZeroPaddedString(minute, 2);
 }

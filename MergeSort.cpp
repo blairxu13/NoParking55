@@ -1,25 +1,13 @@
-//
-// Created by UFSpring2023 on 3/20/2023.
-//
-#include <iostream>
-#include <vector>
-#include <fstream>
-#include <string>
 #include "MergeSort.h"
-#include "License.h"
+
 using namespace std;
 
+// This code doesn't seem to work, so I commented it out to be able to test it.
+// If you want to access a license plate string from the vector, do plates.at(0)->plateNumber
 
 /*
-class MergeSort{
-public:
-	void mergesort(License plates, int left, int right);
-private:
-	void merge(License plates, int left, int mid, int right);
-};
-
 //class slides
-void Merge::mergesort(License plates, int left, int right) {
+void MergeSort::mergesort(std::vector<std::unique_ptr<Citation>> &plates, int left, int right) {
 	if (left < right) {
 		int mid = left + (right - left) / 2;
 		mergesort(plates, left, mid);
@@ -31,7 +19,7 @@ void Merge::mergesort(License plates, int left, int right) {
 }
 
 //class slides
-void Merge::merge(License plates, int left, int mid, int right) {
+void MergeSort::merge(std::vector<std::unique_ptr<Citation>> &plates, int left, int mid, int right) {
 	int n1 = mid - left + 1;
 	int n2 = right - mid;
 	vector<License> low;
