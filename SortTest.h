@@ -1,6 +1,7 @@
 #ifndef NOPARKING_SORTTEST_H
 #define NOPARKING_SORTTEST_H
 
+#include <iostream>
 #include <memory>
 #include <string>
 #include <vector>

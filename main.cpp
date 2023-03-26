@@ -18,18 +18,18 @@ int main() {
     // Access it by doing *(database.data.at(index))
     // If passing into a function, remember to pass by REFERENCE. Otherwise the code will be *very* slow.
 
-    cout << "removing all but the first 100 elements..." << endl;
-    database.data.erase(database.data.begin() + 100, database.data.end());
+    //cout << "Removing all but the first 10000 elements..." << endl;
+    //database.data.erase(database.data.begin() + 10000, database.data.end());
 
     cout << "License plate number of first plate: " << endl;
     cout << database.data.at(0)->plateNumber << endl;
     cout << std::string(*(database.data.at(0)->dateTime)) << endl;
 
-    cout << "Now sorting data..." << endl;
-    SortTest::selectionSort(database.data);
-    cout << "Information about the first citation:" << endl;
-    cout << database.data.at(0)->plateNumber << endl;
-    cout << std::string(*(database.data.at(0)->dateTime)) << endl;
+    //cout << "Now sorting data..." << endl;
+    //SortTest::selectionSort(database.data);
+    //cout << "Information about the first citation:" << endl;
+    //cout << database.data.at(0)->plateNumber << endl;
+    /cout << std::string(*(database.data.at(0)->dateTime)) << endl;
 
     /*
 	//mergesorts
