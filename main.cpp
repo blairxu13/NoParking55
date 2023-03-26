@@ -53,7 +53,7 @@ int main() {
 	//mergesorts
 	int size = plates.size();
 	Merge sort;
-	sort.mergesort(plates, 0, size - 1);
+	sort.mergesort(store, 0, size - 1);
 
 	cout << "Enter License Plate: " << endl;
 	cin >> search;

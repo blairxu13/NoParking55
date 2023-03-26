@@ -6,19 +6,20 @@
 #include <fstream>
 #include <string>
 #include "MergeSort.h"
+#include "License.h"
 using namespace std;
 
 
 
-class Merge{
+class MergeSort{
 public:
-	void mergesort(vector<string> plates, int left, int right);
+	void mergesort(License plates, int left, int right);
 private:
-	void merge(vector<string> plates, int left, int mid, int right);
+	void merge(License plates, int left, int mid, int right);
 };
 
 //class slides
-void Merge::mergesort(vector<string> plates, int left, int right) {
+void Merge::mergesort(License plates, int left, int right) {
 	if (left < right) {
 		int mid = left + (right - left) / 2;
 		mergesort(plates, left, mid);
@@ -30,11 +31,11 @@ void Merge::mergesort(vector<string> plates, int left, int right) {
 }
 
 //class slides
-void Merge::merge(vector<string> plates, int left, int mid, int right) {
+void Merge::merge(License plates, int left, int mid, int right) {
 	int n1 = mid - left + 1;
 	int n2 = right - mid;
-	vector<string> low;
-	vector<string> high;
+	vector<License> low;
+	vector<License> high;
 
 	for (int i = 0; i < n1; i++)
 		low.at(i) = plates.at(left + i);
