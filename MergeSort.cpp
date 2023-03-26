@@ -6,6 +6,7 @@
 #include <fstream>
 #include <string>
 #include "MergeSort.h"
+#include "License.h"
 using namespace std;
 
 
