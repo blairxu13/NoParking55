@@ -43,9 +43,6 @@ int main() {
 	Merge sort;
 	sort.mergesort(store, 0, size - 1);
 
-	cout << "Enter License Plate: " << endl;
-	cin >> search;
-     */
 
 	return 0;
 }
