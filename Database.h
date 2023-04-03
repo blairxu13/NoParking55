@@ -12,6 +12,8 @@
 class Database {
 public:
     std::vector<std::unique_ptr<Citation>> data;  // The database of parking citations
+    std::vector<std::unique_ptr<Citation>> plateSortedData;  // Parking citations sorted by license plate
+    std::vector<std::unique_ptr<Citation>> datetimeSortedData;  // Parking citations sorted by date and time
     /**
      * Creates an interface to a ParkingCitation database.
      */

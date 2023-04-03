@@ -9,6 +9,12 @@
 #include "SortTest.h"
 using namespace std;
 
+/*
+The Plan:
+ - Merge sort the license plate numbers
+ - Radix sort or bucket sort the date/time.
+ */
+
 int main() {
 
     Database database;
@@ -29,7 +35,7 @@ int main() {
     //SortTest::selectionSort(database.data);
     //cout << "Information about the first citation:" << endl;
     //cout << database.data.at(0)->plateNumber << endl;
-    /cout << std::string(*(database.data.at(0)->dateTime)) << endl;
+    //cout << std::string(*(database.data.at(0)->dateTime)) << endl;
 
     /*
 	//mergesorts
