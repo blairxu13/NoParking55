@@ -13,28 +13,3 @@ void SortTest::selectionSort(std::vector<std::unique_ptr<Citation>> &citations) 
         std::swap(citations.at(sortIndex), citations.at(minIndex));  // Swap the pointers
     }
 }
-
-void SortTest::testSort(std::vector<std::unique_ptr<Citation>> &citations) {
-    std::map<char, std::vector<std::unique_ptr<Citation>>> buckets;
-    buckets.insert(std::pair('\0', std::vector<std::unique_ptr<Citation>>()));
-    buckets.insert(std::pair('.', std::vector<std::unique_ptr<Citation>>()));
-    buckets.insert(std::pair('+', std::vector<std::unique_ptr<Citation>>()));
-    for (char currChar = '0'; currChar <= '9'; currChar++) {
-        // Insert all numbers
-        buckets.insert(std::pair(currChar, std::vector<std::unique_ptr<Citation>>()));
-    }
-    for (char currChar = 'A'; currChar <= 'Z'; currChar++) {
-        // Insert the alphabet
-        buckets.insert(std::pair(currChar, std::vector<std::unique_ptr<Citation>>()));
-    }
-
-    // Place into appropriate bucket
-    for (std::unique_ptr<Citation>& citationPtr : citations) {
-        if ((*citationPtr).plateNumber.empty()) {
-            buckets.at('\0').push_back(std::unique_ptr<Citation>(&*citationPtr));
-            continue;
-        }
-        char& firstCharOfPlate = (*citationPtr).plateNumber.front();
-        buckets.at(firstCharOfPlate).push_back(std::unique_ptr<Citation>(&*citationPtr));
-    }
-}

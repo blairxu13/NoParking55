@@ -14,7 +14,6 @@
 class SortTest {
 public:
     static void selectionSort(std::vector<std::unique_ptr<Citation>> &citations);
-    static void testSort(std::vector<std::unique_ptr<Citation>> &citations);
 };
 
 #endif //NOPARKING_SORTTEST_H
