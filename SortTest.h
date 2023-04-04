@@ -2,6 +2,7 @@
 #define NOPARKING_SORTTEST_H
 
 #include <iostream>
+#include <map>
 #include <memory>
 #include <string>
 #include <vector>
@@ -13,6 +14,7 @@
 class SortTest {
 public:
     static void selectionSort(std::vector<std::unique_ptr<Citation>> &citations);
+    static void testSort(std::vector<std::unique_ptr<Citation>> &citations);
 };
 
 #endif //NOPARKING_SORTTEST_H

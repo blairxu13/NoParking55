@@ -27,15 +27,67 @@ int main() {
     //cout << "Removing all but the first 10000 elements..." << endl;
     //database.data.erase(database.data.begin() + 10000, database.data.end());
 
+    cout << "Welcome to No Parking (version 1.0)" << endl;
+    cout << "Type \"help\" for help" << endl;
+    while (true) {
+        string inputLine;
+        cout << " >";  // Terminal prompt
+        getline(cin, inputLine);
+        cout << endl;
+
+        // If there is one argument, lastArgument is the one that will be populated
+        // If there are two arguments, both middleArgument and lastArgument are populated
+        string command;
+        string firstArgument;
+        string secondArgument;
+
+        if (inputLine.find(' ') == string::npos) {
+            // No arguments.
+            command = inputLine.substr(0, inputLine.find(' '));
+        }
+        else if (inputLine.find_first_of(' ') == inputLine.find_last_of(' ')) {
+            // 1 argument.
+            command = inputLine.substr(0, inputLine.find(' '));
+            firstArgument = inputLine.substr(inputLine.find(' '));
+            firstArgument.erase(firstArgument.find(' '), 1);
+        }
+        else {
+            command = inputLine.substr(0, inputLine.find(' '));
+            firstArgument = inputLine.substr(inputLine.find(' '), inputLine.find_last_of(' ') - inputLine.find(' '));
+            firstArgument.erase(firstArgument.find(' '), 1);
+            secondArgument = inputLine.substr(inputLine.find_last_of(' '));
+            secondArgument.erase(secondArgument.find(' '), 1);
+        }
+
+        if (command.at(0) == 'g') {
+            // get
+        }
+        else if (command.at(0) == 'q') {
+            // quit
+            break;
+        }
+        else if (command.at(0) == 's') {
+            // sort
+            cout << "Now sorting data..." << endl;
+            SortTest::selectionSort(database.data);
+            cout << "Information about the first citation:" << endl;
+            cout << database.data.at(0)->plateNumber << endl;
+            cout << std::string(*(database.data.at(0)->dateTime)) << endl;
+        }
+        else {
+            // Help
+            cout << "Commands list:" << endl;
+            cout << "get <index> - Gets the license plate at a specific index" << endl;
+            cout << "help - Displays this help message" << endl;
+            cout << "search <query> - Searches for a license plate" << endl;
+            cout << "sort <algorithm> - Sorts license plates by an algorithm. Algorithm is m for merge sort or b for bucket sort" << endl;
+            cout << "quit - Exits the program" << endl;
+        }
+    }
+
     cout << "License plate number of first plate: " << endl;
     cout << database.data.at(0)->plateNumber << endl;
     cout << std::string(*(database.data.at(0)->dateTime)) << endl;
-
-    //cout << "Now sorting data..." << endl;
-    //SortTest::selectionSort(database.data);
-    //cout << "Information about the first citation:" << endl;
-    //cout << database.data.at(0)->plateNumber << endl;
-    //cout << std::string(*(database.data.at(0)->dateTime)) << endl;
 
     /*
 	//mergesorts
