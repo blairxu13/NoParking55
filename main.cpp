@@ -31,9 +31,8 @@ int main() {
     cout << "Type \"help\" for help" << endl;
     while (true) {
         string inputLine;
-        cout << " >";  // Terminal prompt
+        cout << endl << " >";  // Terminal prompt
         getline(cin, inputLine);
-        cout << endl;
 
         // If there is one argument, lastArgument is the one that will be populated
         // If there are two arguments, both middleArgument and lastArgument are populated
@@ -87,7 +86,7 @@ int main() {
         else if (command.at(0) == 's') {
             // sort
             if (firstArgument.empty()) {
-                cout << "Command \"sort\" requires one argument <algorithm>" << endl;
+                cout << "Command \"sort\" requires one argument <algorithm>, which can be either m for merge or b for bucket." << endl;
             }
             else if (firstArgument.at(0) == 'm') {
                 cout << "Merge sort not implemented yet..." << endl;
@@ -116,10 +115,6 @@ int main() {
             cout << "quit - Exits the program" << endl;
         }
     }
-
-    cout << "License plate number of first plate: " << endl;
-    cout << database.data.at(0)->plateNumber << endl;
-    cout << std::string(*(database.data.at(0)->dateTime)) << endl;
 
     /*
 	//mergesorts
