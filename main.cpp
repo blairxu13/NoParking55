@@ -86,7 +86,10 @@ int main() {
         }
         else if (command.at(0) == 's') {
             // sort
-            if (firstArgument.at(0) == 'm') {
+            if (firstArgument.empty()) {
+                cout << "Command \"sort\" requires one argument <algorithm>" << endl;
+            }
+            else if (firstArgument.at(0) == 'm') {
                 cout << "Merge sort not implemented yet..." << endl;
             }
             else if (firstArgument.at(0) == 'b') {
