@@ -61,6 +61,16 @@ int main() {
 
         if (command.at(0) == 'g') {
             // get
+            int indexToGet = 0;  // The index to get
+            try {
+                indexToGet = std::stoi(firstArgument);
+                if (indexToGet < 0) {
+                    cout << "Expected <index> in get command to be positive, got " << firstArgument << endl;
+                }
+            }
+            catch (std::invalid_argument &e) {
+                cout << "get command requires an integer as the first argument, not \"" << firstArgument << '\"' << endl;
+            }
         }
         else if (command.at(0) == 'q') {
             // quit
@@ -68,11 +78,22 @@ int main() {
         }
         else if (command.at(0) == 's') {
             // sort
-            cout << "Now sorting data..." << endl;
-            SortTest::selectionSort(database.data);
-            cout << "Information about the first citation:" << endl;
-            cout << database.data.at(0)->plateNumber << endl;
-            cout << std::string(*(database.data.at(0)->dateTime)) << endl;
+            if (firstArgument.at(0) == 'm') {
+                cout << "Merge sort not implemented yet..." << endl;
+            }
+            else if (firstArgument.at(0) == 'b') {
+                cout << "Bucket sort not implemented yet..." << endl;
+            }
+            else if (firstArgument.at(0) == 's') {
+                cout << "Now sorting data..." << endl;
+                SortTest::selectionSort(database.data);
+                cout << "Information about the first citation:" << endl;
+                cout << database.data.at(0)->plateNumber << endl;
+                cout << std::string(*(database.data.at(0)->dateTime)) << endl;
+            }
+            else {
+                cout << "Please type m for merge sort or b for bucket sort." << endl;
+            }
         }
         else {
             // Help
@@ -97,4 +118,5 @@ int main() {
 
 
 	return 0;
+     */
 }
