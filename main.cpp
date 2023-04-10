@@ -51,6 +51,7 @@ int main() {
             firstArgument.erase(firstArgument.find(' '), 1);
         }
         else {
+            // 2 arguments
             command = inputLine.substr(0, inputLine.find(' '));
             firstArgument = inputLine.substr(inputLine.find(' '), inputLine.find_last_of(' ') - inputLine.find(' '));
             firstArgument.erase(firstArgument.find(' '), 1);
@@ -62,6 +63,7 @@ int main() {
             // get
             int indexToGet = 0;  // The index to get
             try {
+                // Parse the argument as an integer
                 indexToGet = std::stoi(firstArgument);
                 if (indexToGet < 0) {
                     cout << "Expected <index> in get command to be positive, got " << firstArgument << endl;
