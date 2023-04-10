@@ -66,10 +66,12 @@ int main() {
                 indexToGet = std::stoi(firstArgument);
                 if (indexToGet < 0) {
                     cout << "Expected <index> in get command to be positive, got " << firstArgument << endl;
+                    continue;
                 }
             }
             catch (std::invalid_argument &e) {
                 cout << "get command requires an integer as the first argument, not \"" << firstArgument << '\"' << endl;
+                continue;
             }
         }
         else if (command.at(0) == 'q') {
