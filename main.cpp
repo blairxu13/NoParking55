@@ -106,9 +106,9 @@ int main() {
         else {
             // Help
             cout << "Commands list:" << endl;
+            cout << "find <query> - Searches for a license plate" << endl;
             cout << "get <index> - Gets the license plate at a specific index" << endl;
             cout << "help - Displays this help message" << endl;
-            cout << "search <query> - Searches for a license plate" << endl;
             cout << "sort <algorithm> - Sorts license plates by an algorithm. Algorithm is m for merge sort or b for bucket sort" << endl;
             cout << "quit - Exits the program" << endl;
         }
