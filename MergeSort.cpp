@@ -4,11 +4,11 @@
 #include "MergeSort.h"
 using namespace std;
 
-void merge(vector<License>& store, int left, int mid, int right) {
+void merge(vector<Citation>& store, int left, int mid, int right) {
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
-    vector<License> L(n1), R(n2);
+    vector<Citation> L(n1), R(n2);
 
     for (int i = 0; i < n1; i++) {
         L[i] = store[left + i];
@@ -45,7 +45,7 @@ void merge(vector<License>& store, int left, int mid, int right) {
     }
 }
 
-void mergeSort(vector<License>& store, int left, int right) {
+void mergeSort(vector<Citation>& store, int left, int right) {
     if (left >= right) {
         return;
     }
