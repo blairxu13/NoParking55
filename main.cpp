@@ -73,6 +73,12 @@ int main() {
                 cout << "get command requires an integer as the first argument, not \"" << firstArgument << '\"' << endl;
                 continue;
             }
+            cout << "License plate number: " << endl;
+            cout << database.data.at(indexToGet)->plateNumber << endl;
+            cout << std::string(*(database.data.at(indexToGet)->dateTime)) << endl;
+            cout << database.data.at(indexToGet)->state << " | " << database.data.at(indexToGet)->carColor <<
+                " " << database.data.at(indexToGet)->carMake << " " << database.data.at(indexToGet)->carStyle <<
+                " | Fined $" << database.data.at(indexToGet)->fine << endl;
         }
         else if (command.at(0) == 'q') {
             // quit
