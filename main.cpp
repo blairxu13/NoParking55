@@ -25,7 +25,7 @@ int main() {
     // If passing into a function, remember to pass by REFERENCE. Otherwise the code will be *very* slow.
 
     //cout << "Removing all but the first 10000 elements..." << endl;
-    //database.data.erase(database.data.begin() + 10000, database.data.end());
+    //database.data.erase(database.data.begin() + 8, database.data.end());
 
     cout << "Welcome to No Parking (version 1.0)" << endl;
     cout << "Type \"help\" for help" << endl;
@@ -91,7 +91,11 @@ int main() {
                 cout << "Command \"sort\" requires one argument <algorithm>, which can be either m for merge or b for bucket." << endl;
             }
             else if (firstArgument.at(0) == 'm') {
-                cout << "Merge sort not implemented yet..." << endl;
+                cout << "Now merge sorting data..." << endl;
+                MergeSort::mergeWrapper(database.data);
+                cout << "Information about the first citation:" << endl;
+                cout << database.data.at(0)->plateNumber << endl;
+                cout << std::string(*(database.data.at(0)->dateTime)) << endl;
             }
             else if (firstArgument.at(0) == 'b') {
                 cout << "Bucket sort not implemented yet..." << endl;
