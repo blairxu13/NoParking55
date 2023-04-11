@@ -6,7 +6,6 @@
 #include "Database.h"
 #include "MergeSort.h"
 #include "BucketSort.h"
-#include "SortTest.h"
 using namespace std;
 
 /*
@@ -58,7 +57,10 @@ int main() {
             secondArgument = inputLine.substr(inputLine.find_last_of(' '));
             secondArgument.erase(secondArgument.find(' '), 1);
         }
-
+        if (command.at(0) == 'f') {
+            // TODO Implement binary search
+            cout << "Find command not implemented yet..." << endl;
+        }
         if (command.at(0) == 'g') {
             // get
             int indexToGet = 0;  // The index to get
@@ -100,13 +102,6 @@ int main() {
             else if (firstArgument.at(0) == 'b') {
                 cout << "Bucket sort not implemented yet..." << endl;
             }
-            else if (firstArgument.at(0) == 's') {
-                cout << "Now sorting data..." << endl;
-                SortTest::selectionSort(database.data);
-                cout << "Information about the first citation:" << endl;
-                cout << database.data.at(0)->plateNumber << endl;
-                cout << std::string(*(database.data.at(0)->dateTime)) << endl;
-            }
             else {
                 cout << "Please type m for merge sort or b for bucket sort." << endl;
             }
@@ -121,14 +116,4 @@ int main() {
             cout << "quit - Exits the program" << endl;
         }
     }
-
-    /*
-	//mergesorts
-	int size = plates.size();
-	Merge sort;
-	sort.mergesort(store, 0, size - 1);
-
-
-	return 0;
-     */
 }
