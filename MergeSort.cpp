@@ -4,7 +4,7 @@
 #include "MergeSort.h"
 using namespace std;
 
-void merge(vector<Citation>& store, int left, int mid, int right) {
+void Merge::merge(vector<Citation>& store, int left, int mid, int right) {
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
@@ -45,7 +45,7 @@ void merge(vector<Citation>& store, int left, int mid, int right) {
     }
 }
 
-void mergeSort(vector<Citation>& store, int left, int right) {
+void Merge::mergeSort(vector<Citation>& store, int left, int right) {
     if (left >= right) {
         return;
     }
