@@ -3,7 +3,8 @@
 
 
 class BucketSort {
-
+ public:
+  void bucketsort (float arr[], int n);
 };
 
 
