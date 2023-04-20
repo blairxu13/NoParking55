@@ -2,9 +2,18 @@
 #define NOPARKING_BUCKETSORT_H
 
 
-class BucketSort {
- public:
-  void bucketsort (float arr[], int n);
+#include <fstream>
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+#include "Citation.h"
+
+class BucketSorter {
+public:
+    BucketSorter() = default;
+    void sort(std::vector<int>& arr, int num_buckets);
+    int findNumBuckets(std::vector<int>& arr);
 };
 
 
