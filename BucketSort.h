@@ -12,8 +12,8 @@
 class BucketSorter {
 public:
     BucketSorter() = default;
-    void sort(std::vector<int>& arr, int num_buckets);
-    int findNumBuckets(std::vector<int>& arr);
+    void sort(std::vector<std::unique_ptr<Citation>> &plates, int num_buckets);
+    int findNumBuckets(std::vector<std::unique_ptr<Citation>> &plates);
 };
 
 
