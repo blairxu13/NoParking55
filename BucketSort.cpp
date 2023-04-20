@@ -1,25 +1,33 @@
 #include "BucketSort.h"
 
-void BucketSort::bucketSort(float arr[], int n)
-{
-      
-    // 1) Create n empty buckets
-    vector<float> b[n];
-  
-    // 2) Put array elements 
-    // in different buckets
+#include "bucket_sort.h"
+#include <algorithm>
+
+void BucketSorter::sort(std::vector<std::unique_ptr<Citation>> &plates, int num_buckets) {
+    int n = arr.size();
+    std::vector<std::vector<int>> buckets(num_buckets);
+
+    int max_element = *std::max_element(arr.begin(), arr.end());
+
     for (int i = 0; i < n; i++) {
-        int bi = n * arr[i]; // Index in bucket
-        b[bi].push_back(arr[i]);
+        int bucket_index = (num_buckets * arr[i]) / (max_element + 1);
+        buckets[bucket_index].push_back(arr[i]);
     }
-  
-    // 3) Sort individual buckets
-    for (int i = 0; i < n; i++)
-        sort(b[i].begin(), b[i].end());
-  
-    // 4) Concatenate all buckets into arr[]
+
+    for (int i = 0; i < num_buckets; i++) {
+        std::sort(buckets[i].begin(), buckets[i].end());
+    }
+
     int index = 0;
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < b[i].size(); j++)
-            arr[index++] = b[i][j];
+    for (int i = 0; i < num_buckets; i++) {
+        for (int j = 0; j < buckets[i].size(); j++) {
+            arr[index++] = buckets[i][j];
+        }
+    }
+}
+
+int BucketSorter::findNumBuckets(std::vector<std::unique_ptr<Citation>> &plates) {
+    int n = arr.size();
+    int max_element = *std::max_element(arr.begin(), arr.end());
+    return std::max(1, n / (max_element + 1));
 }
