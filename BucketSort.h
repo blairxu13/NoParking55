@@ -10,9 +10,9 @@
 #include "Citation.h"
 
 
-class BucketSort {
+class BucketSorter {
 public:
-    static void sort(std::vector<std::unique_ptr<Citation>> &plates, int num_buckets);
+    void sort(std::vector<std::unique_ptr<Citation>> &plates, int num_buckets);
+    int findNumBuckets(std::vector<std::unique_ptr<Citation>> &plates);
 };
-
 #endif
