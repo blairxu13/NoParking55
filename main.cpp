@@ -100,7 +100,14 @@ int main() {
                 cout << std::string(*(database.data.at(0)->dateTime)) << endl;
             }
             else if (firstArgument.at(0) == 'b') {
-                cout << "Bucket sort not implemented yet..." << endl;
+              
+               cout << "Now Bucket sorting data..." << endl;
+              int numofbucket = BucketSorter::findNumBuckets(database.data);
+             BucketSorter::sort(database.data, numofbucket);
+              cout << "Information about the first citation:" << endl;
+                cout << database.data.at(0)->plateNumber << endl;
+              cout << std::string(*(database.data.at(0)->dateTime)) << endl;
+             
             }
             else {
                 cout << "Please type m for merge sort or b for bucket sort." << endl;
