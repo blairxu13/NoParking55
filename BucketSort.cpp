@@ -4,14 +4,14 @@
 #include <algorithm>
 
 void BucketSorter::sort(std::vector<std::unique_ptr<Citation>> &plates, int num_buckets) {
-    int n = arr.size();
+    int n = plates.size();
     std::vector<std::vector<int>> buckets(num_buckets);
 
-    int max_element = *std::max_element(arr.begin(), arr.end());
+    int max_element = *std::max_element(plates.begin(), plates.end());
 
     for (int i = 0; i < n; i++) {
-        int bucket_index = (num_buckets * arr[i]) / (max_element + 1);
-        buckets[bucket_index].push_back(arr[i]);
+        int bucket_index = (num_buckets * plates[i]) / (max_element + 1);
+        buckets[bucket_index].push_back(plates[i]);
     }
 
     for (int i = 0; i < num_buckets; i++) {
@@ -21,7 +21,7 @@ void BucketSorter::sort(std::vector<std::unique_ptr<Citation>> &plates, int num_
     int index = 0;
     for (int i = 0; i < num_buckets; i++) {
         for (int j = 0; j < buckets[i].size(); j++) {
-            arr[index++] = buckets[i][j];
+            plates[index++] = buckets[i][j];
         }
     }
 }
